@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Usuarios</title>
+    <style>
+        th, tr, td{
+            padding-bottom: 4px;
+            padding-left: 16px;
+            padding-right: 16px;
+            border-bottom: 1px solid #909090;
+        }
+    </style>
+</head>
+<body>
+<div align="center" style="margin-top: 80px">
+    <h1>Medicuuuuuu</h1>
+    <form method="post" th:action="@{/medico/save}">
+        <div style="display: flex;flex-direction: column;flex-wrap: nowrap;align-items: flex-start;gap: 8px;width: 170px;">
+            <label>
+                <input type="text" placeholder="Nome" name="nome" style="margin-bottom: 8px"/>
+                <input type="text" placeholder="Especialidade" name="especialidade"/>
+            </label>
+            <div style="width: 100%">
+                <div style="width: 50%; float: left;">
+                    <label>Admin</label>
+                    <input type="checkbox" name="nome"/>
+                </div>
+                <div style="float: right; width: 50%">
+                    <button type="submit" >Salvar</button>
+                </div>
+            </div>
+        </div>
+
+    </form>
+
+    <h1>Listar Usuarios</h1>
+    <table style="border: 2px solid #ddd;">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Admin</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="medico : ${medico}">
+            <td th:text="${medico.nome}"></td>
+            <td th:text="${medico.especialidade}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
+
+<style>body, html {
+    background-color: #add8e6; /* Azul claro */
+}
+</style>
+
+<script>
+
+
+
+</script>
