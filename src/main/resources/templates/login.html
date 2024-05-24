@@ -1,10 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Login</title>
+    <title>Usuarios</title>
+    <style>
+        th, tr, td {
+            padding-bottom: 4px;
+            padding-left: 16px;
+            padding-right: 16px;
+            border-bottom: 1px solid #909090;
+        }
+    </style>
 </head>
 <body>
-<h1>Login</h1>
+<div align="center" style="margin-top: 80px">
+    <h1>Login</h1>
+    <form method="post" th:action="@{/usuarios/login}">
+        <div style="display: flex;flex-direction: column;flex-wrap: nowrap;align-items: flex-start;gap: 8px;width: 170px; align-items:center;">
+            <label>
+                <input type="text" placeholder="Nome" name="nome" style="margin-bottom: 8px"/>
+                <input type="text" placeholder="Senha" name="senha"/>
+            </label>
+            <div style="width: 100%">
+                <div style="float: right; width: 50%">
+                    <button type="submit">Logar</button>
+                </div>
+            </div>
+        </div>
+
+    </form>
+</div>
 </body>
 </html>
+
+<style>body, html {
+    background-color: #add8e6; /* Azul claro */
+}
+</style>
+
+<script>
+
+
+</script>

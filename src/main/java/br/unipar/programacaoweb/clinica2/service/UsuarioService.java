@@ -11,17 +11,20 @@ public class UsuarioService {
 
     private final UsuarioRepository usuarioRepository;
 
-    public UsuarioService(UsuarioRepository usuarioRepository){
+    public UsuarioService(UsuarioRepository usuarioRepository) {
         this.usuarioRepository = usuarioRepository;
     }
 
-    public List<Usuario> getAll(){
+    public List<Usuario> getAll() {
         return this.usuarioRepository.findAll();
     }
 
-    public Usuario save(Usuario usuario){
+    public Usuario save(Usuario usuario) {
         return this.usuarioRepository.save(usuario);
     }
 
+    public Usuario login(Usuario usuario) {
+        return this.usuarioRepository.findByLoginAndSenha(usuario.getLogin(), usuario.getSenha());
+    }
 
 }
