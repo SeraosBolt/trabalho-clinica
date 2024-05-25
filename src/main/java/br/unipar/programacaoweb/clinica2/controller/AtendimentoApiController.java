@@ -1,6 +1,7 @@
 package br.unipar.programacaoweb.clinica2.controller;
 import br.unipar.programacaoweb.clinica2.model.Atendimento;
 import br.unipar.programacaoweb.clinica2.service.AtendimentoService;
+import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

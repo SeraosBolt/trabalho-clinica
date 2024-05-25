@@ -39,7 +39,7 @@ public class UsuarioWebController {
         Usuario user = usuarioService.login(usuario);
         System.out.println(user);
         if (user != null) {
-            if(user.getAdmin()){
+            if(user.getAdmin() != null){
                 return "redirect:/cadastroAdmin";
             }else{
                 return "redirect:/cadastro";
