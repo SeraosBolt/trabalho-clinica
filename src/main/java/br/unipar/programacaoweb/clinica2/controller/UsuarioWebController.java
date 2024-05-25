@@ -34,4 +34,15 @@ public class UsuarioWebController {
         return "redirect:/usuarios";
     }
 
+    @PostMapping(path = "/usuarios/login")
+    public String login(Usuario usuario) {
+        Usuario user = usuarioService.login(usuario);
+        System.out.println(user);
+        if (user != null) {
+            return "redirect:/usuarios";
+        } else {
+            return "redirect:/login";
+        }
+    }
+
 }

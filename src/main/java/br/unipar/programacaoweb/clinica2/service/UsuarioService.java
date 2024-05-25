@@ -13,17 +13,26 @@ public class UsuarioService {
 
     private final UsuarioRepository usuarioRepository;
 
-    public UsuarioService(UsuarioRepository usuarioRepository){
+    public UsuarioService(UsuarioRepository usuarioRepository) {
         this.usuarioRepository = usuarioRepository;
     }
 
-    public List<Usuario> getAll(){
+    public List<Usuario> getAll() {
         return this.usuarioRepository.findAll();
     }
 
-    public Usuario save(Usuario usuario){
+    public Usuario save(Usuario usuario) {
         return this.usuarioRepository.save(usuario);
     }
 
+    public Usuario login(Usuario usuario) {
+        List<Usuario> userArray = this.usuarioRepository.findAll();
+        for (Usuario user : userArray) {
+            if (user.getNome().equals(usuario.getNome()) && user.getSenha().equals(usuario.getSenha())) {
+                return user;
+            }
+        }
+        return null;
+    }
 
 }
