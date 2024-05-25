@@ -2,43 +2,89 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Usuarios</title>
+    <title>Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        th, tr, td {
-            padding-bottom: 4px;
-            padding-left: 16px;
-            padding-right: 16px;
-            border-bottom: 1px solid #909090;
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f4f8; /* Azul muito claro */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-container {
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        input[type="text"], input[type="password"] {
+            width: calc(100% - 24px);
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 0;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .forgot-password {
+            margin-top: 10px;
+        }
+
+        .forgot-password a {
+            color: #007bff;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .forgot-password a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
-<div align="center" style="margin-top: 80px">
+<div class="login-container">
     <h1>Login</h1>
     <form method="post" th:action="@{/usuarios/login}">
-        <div style="display: flex;flex-direction: column;flex-wrap: nowrap;align-items: flex-start;gap: 8px;width: 170px; align-items:center;">
-            <label>
-                <input type="text" placeholder="Nome" name="nome" style="margin-bottom: 8px"/>
-                <input type="text" placeholder="Senha" name="senha"/>
-            </label>
-            <div style="width: 100%">
-                <div style="float: right; width: 50%">
-                    <button type="submit">Logar</button>
-                </div>
-            </div>
-        </div>
-
+        <input type="text" placeholder="Nome" name="nome" required>
+        <input type="password" placeholder="Senha" name="senha" required>
+        <button type="submit">Logar</button>
     </form>
+
 </div>
 </body>
 </html>
-
-<style>body, html {
-    background-color: #add8e6; /* Azul claro */
-}
-</style>
-
-<script>
-
-
-</script>
