@@ -4,11 +4,13 @@ import br.unipar.programacaoweb.clinica2.model.Atendimento;
 import br.unipar.programacaoweb.clinica2.model.Usuario;
 import br.unipar.programacaoweb.clinica2.repository.AtendimentoRepository;
 import br.unipar.programacaoweb.clinica2.repository.UsuarioRepository;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
+@Tag(name = "Service do atendimento", description = "Atendimento")
 public class AtendimentoService {
 
     private final AtendimentoRepository atendimentoRepository;

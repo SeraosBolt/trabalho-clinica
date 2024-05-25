@@ -3,6 +3,7 @@ import br.unipar.programacaoweb.clinica2.model.Paciente;
 import br.unipar.programacaoweb.clinica2.model.Usuario;
 import br.unipar.programacaoweb.clinica2.service.PacienteService;
 import br.unipar.programacaoweb.clinica2.service.UsuarioService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,6 +11,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
 @Controller
+
+@Tag(name = "Paciente Web Controller", description = "Paciente")
 public class PacienteWebController {
 
     private final PacienteService pacienteService;

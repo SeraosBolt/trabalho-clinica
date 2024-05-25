@@ -1,5 +1,6 @@
 package br.unipar.programacaoweb.clinica2.model;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -13,7 +14,7 @@ import java.io.Serializable;
 @Getter
 @Setter
 
-
+@Tag(name = "Model do médico", description = "Medico")
 public class Medico implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

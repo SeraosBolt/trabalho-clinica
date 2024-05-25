@@ -2,11 +2,13 @@ package br.unipar.programacaoweb.clinica2.service;
 
 import br.unipar.programacaoweb.clinica2.model.Usuario;
 import br.unipar.programacaoweb.clinica2.repository.UsuarioRepository;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
+@Tag(name = "Service do usuario", description = "Usuario")
 public class UsuarioService {
 
     private final UsuarioRepository usuarioRepository;

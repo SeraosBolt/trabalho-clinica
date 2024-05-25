@@ -4,6 +4,7 @@ import br.unipar.programacaoweb.clinica2.model.Atendimento;
 import br.unipar.programacaoweb.clinica2.model.Usuario;
 import br.unipar.programacaoweb.clinica2.service.AtendimentoService;
 import br.unipar.programacaoweb.clinica2.service.UsuarioService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -19,6 +20,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import java.util.List;
 
 @Controller
+
+@Tag(name = "Atendimento Web Controller", description = "Atendimentos")
 public class AtendimentoWebController {
 
     private final AtendimentoService atendimentoService;

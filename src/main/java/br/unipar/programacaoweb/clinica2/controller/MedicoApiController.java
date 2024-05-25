@@ -5,6 +5,7 @@ import br.unipar.programacaoweb.clinica2.model.Usuario;
 import br.unipar.programacaoweb.clinica2.service.MedicoService;
 import br.unipar.programacaoweb.clinica2.service.PacienteService;
 import br.unipar.programacaoweb.clinica2.service.UsuarioService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,6 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 @RestController
+
+@Tag(name = "Medico API Controller", description = "Medico")
 public class MedicoApiController {
 
     private final MedicoService medicoService;

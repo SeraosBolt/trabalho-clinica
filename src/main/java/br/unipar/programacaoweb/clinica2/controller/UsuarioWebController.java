@@ -2,6 +2,7 @@ package br.unipar.programacaoweb.clinica2.controller;
 
 import br.unipar.programacaoweb.clinica2.model.Usuario;
 import br.unipar.programacaoweb.clinica2.service.UsuarioService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,6 +11,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import java.util.List;
 
 @Controller
+
+@Tag(name = "Usuario Web Controller", description = "Usuario")
 public class UsuarioWebController {
 
     private final UsuarioService usuarioService;
