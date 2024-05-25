@@ -24,9 +24,6 @@ public class Atendimento implements Serializable {
     @ManyToOne
     private Medico medico;
 
-
-
     @ManyToOne
     private Paciente paciente;
-
 }

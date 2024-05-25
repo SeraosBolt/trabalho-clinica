@@ -97,10 +97,8 @@
 <body>
 <div class="form-container">
     <h1>Consulta</h1>
-    <form action="/salvar_consulta" method="post">
+    <form th:action="@{/atendimento/save}" method="post">
         <div class="form-group">
-            
-
             <label for="data_hora">Data e Hora:</label>
             <input type="text" id="data_hora" name="data_hora" required>
 
@@ -109,16 +107,12 @@
 
             <label for="medico">Médico:</label>
             <select id="medico" name="medico" required>
-                <option value="medico1">Médico 1</option>
-                <option value="medico2">Médico 2</option>
-                <!-- Adicione mais opções conforme necessário -->
+                <option th:each="medico : ${medicos}" th:text="${medico.nome}" th:value="${medico.id}"></option>
             </select>
 
             <label for="paciente">Paciente:</label>
             <select id="paciente" name="paciente" required>
-                <option value="paciente1">Paciente 1</option>
-                <option value="paciente2">Paciente 2</option>
-                <!-- Adicione mais opções conforme necessário -->
+                <option th:each="paciente : ${pacientes}" th:text="${paciente.nome}" th:value="${paciente.id}"></option>
             </select>
 
             <button type="submit">Salvar Consulta</button>
@@ -137,7 +131,14 @@
         </tr>
         </thead>
         <tbody>
-        <!-- Aqui seria listado as consultas -->
+        <tr th:each="atendimento : ${atendimento}">
+            <td th:text="${atendimento.id}"></td>
+            <td th:text="${atendimento.data_hora}"></td>
+            <td th:text="${atendimento.anamnese}"></td>
+            <td th:text="${atendimento.getMedico().getNome()}"></td>
+            <td th:text="${atendimento.getPaciente().getNome()}"></td>
+
+        </tr>
         </tbody>
     </table>
 </div>
