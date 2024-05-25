@@ -24,7 +24,13 @@ public class UsuarioService {
     }
 
     public Usuario login(Usuario usuario) {
-        return this.usuarioRepository.findByLoginAndSenha(usuario.getLogin(), usuario.getSenha());
+        List<Usuario> userArray = this.usuarioRepository.findAll();
+        for (Usuario user : userArray) {
+            if (user.getNome().equals(usuario.getNome()) && user.getSenha().equals(usuario.getSenha())) {
+                return user;
+            }
+        }
+        return null;
     }
 
 }
