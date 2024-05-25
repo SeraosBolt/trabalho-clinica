@@ -1,5 +1,6 @@
 package br.unipar.programacaoweb.clinica2.model;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -13,16 +14,23 @@ import java.io.Serializable;
 @Entity
 @Getter
 @Setter
-@Tag(name = "Model do usuário", description = "Usuario")
+@Tag(name = "Model do usuário", description = "Usuário")
 public class Usuario implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
+    @Schema(description = "ID do usuário")
     private Integer id;
-    private String nome;
-    private String login;
-    private String senha;
-    private Boolean admin;
 
+    @Schema(description = "Nome do usuário")
+    private String nome;
+
+    @Schema(description = "Login do usuário")
+    private String login;
+
+    @Schema(description = "Senha do usuário")
+    private String senha;
+
+    @Schema(description = "Indica se o usuário é um administrador")
+    private Boolean admin;
 }

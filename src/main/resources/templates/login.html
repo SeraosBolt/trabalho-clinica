@@ -74,6 +74,20 @@
         .forgot-password a:hover {
             text-decoration: underline;
         }
+
+        .register-link {
+            margin-top: 20px;
+        }
+
+        .register-link a {
+            color: #007bff;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .register-link a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -84,7 +98,9 @@
         <input type="password" placeholder="Senha" name="senha" required>
         <button type="submit">Logar</button>
     </form>
-
+    <div class="register-link">
+        <a href="/usuarios">Cadastrar novo usuário</a>
+    </div>
 </div>
 </body>
 </html>

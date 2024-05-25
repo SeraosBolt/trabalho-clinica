@@ -1,27 +1,21 @@
 package br.unipar.programacaoweb.clinica2.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-
-import org.springframework.web.bind.annotation.RestController;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 
 @Controller
-
-@Tag(name = "Cadastro Web Controller", description = "Login")
+@Tag(name = "Cadastro Web Controller", description = "Cadastro")
 public class CadastroWebController {
 
+    @Operation(summary = "Página de cadastro", description = "Retorna a página de cadastro.")
     @GetMapping("/cadastro")
-    public String LoginAdmin(){
+    public String loginAdmin(){
         return "cadastro";
     }
 
     public void loginHandle(){
 
     }
-
-
 }
