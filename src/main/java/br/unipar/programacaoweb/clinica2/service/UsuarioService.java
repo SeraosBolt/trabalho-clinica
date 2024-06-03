@@ -32,7 +32,7 @@ public class UsuarioService {
     public Usuario login(Usuario usuario) {
         List<Usuario> userArray = this.usuarioRepository.findAll();
         for (Usuario user : userArray) {
-            if (user.getNome().equals(usuario.getNome()) && user.getSenha().equals(usuario.getSenha())) {
+            if (user.getNome() != null && user.getNome().equals(usuario.getNome()) && user.getSenha().equals(usuario.getSenha())) {
                 return user;
             }
         }
